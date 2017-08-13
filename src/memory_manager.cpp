@@ -1,5 +1,6 @@
 #include "memory_manager.hpp"
 #include "reuse_or_create.hpp"
+#include "packing.hpp"
 
 namespace mem {
 
@@ -22,9 +23,17 @@ void solve(const std::vector<MemoryUser>& users,
            std::vector<uint64_t>& indices, int strategy) {
   if (strategy == REUSE_OR_CREATE) {
     reuseOrCreate(users, indices);
-  } else {
+  } else if (strategy == PACKING) {
+    packing(users, indices);
+  }
+  else {
     dummy(users, indices);
   }
+}
+
+bool is_intersection(uint64_t l_from, uint64_t l_to, uint64_t r_from,
+                     uint64_t r_to) {
+  return l_to >= r_from && l_from <= r_to;
 }
 
 }  // namespace mem

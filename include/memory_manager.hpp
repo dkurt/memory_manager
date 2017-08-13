@@ -21,11 +21,15 @@ struct MemoryUser {
 enum Strategy {
   DUMMY,
   // Reuse free block closest to new user's memory size or allocate.
-  REUSE_OR_CREATE
+  REUSE_OR_CREATE,
+  PACKING
 };
 
 void solve(const std::vector<MemoryUser>& users, std::vector<uint64_t>& indices,
            int strategy);
+
+bool is_intersection(uint64_t l_from, uint64_t l_to, uint64_t r_from,
+                     uint64_t r_to);
 
 }  // namespace mem
 

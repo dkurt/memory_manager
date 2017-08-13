@@ -2,7 +2,6 @@
 
 #include <algorithm>
 #include <limits>
-#include <iostream>
 
 // Sort by start iter in ascending order and by memory size in descending for
 // users with the same start iteration.
