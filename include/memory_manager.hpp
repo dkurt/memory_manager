@@ -22,7 +22,8 @@ enum Strategy {
   DUMMY,
   // Reuse free block closest to new user's memory size or allocate.
   REUSE_OR_CREATE,
-  PACKING
+  PACKING,
+  LAYERS
 };
 
 void solve(const std::vector<MemoryUser>& users, std::vector<uint64_t>& indices,

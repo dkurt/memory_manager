@@ -1,6 +1,7 @@
 #include "memory_manager.hpp"
 #include "reuse_or_create.hpp"
 #include "packing.hpp"
+#include "layers.hpp"
 
 namespace mem {
 
@@ -25,6 +26,8 @@ void solve(const std::vector<MemoryUser>& users,
     reuseOrCreate(users, indices);
   } else if (strategy == PACKING) {
     packing(users, indices);
+  } else if (strategy == LAYERS) {
+    solveLayers(users, indices);
   }
   else {
     dummy(users, indices);

@@ -105,3 +105,7 @@ TEST(TestMemoryManager, reuse_or_create) {
 TEST(TestMemoryManager, packing) {
   test(PACKING);
 }
+
+TEST(TestMemoryManager, layers) {
+  test(LAYERS);
+}
